@@ -6,7 +6,7 @@ require 'tempfile'
 
 module AngularJS::Rails
   class Updater
-    BASE_URL = 'http://code.angularjs.org/snapshot'
+    BASE_URL = 'http://code.angularjs.org'
     ROOT_PATH = Pathname.new('vendor/assets/javascripts')
 
     def initialize
@@ -79,7 +79,7 @@ module AngularJS::Rails
     end
 
     def download_files
-      url = BASE_URL + "/" + latest_version.to_s
+      url = BASE_URL + "/" + "snapshot"
       Nokogiri::HTML.parse(open(url)).
         css('a').
 
